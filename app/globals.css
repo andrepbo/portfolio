@@ -8,14 +8,6 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,4 +16,64 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+/* START: Home styles */
+.home {
+  @apply min-h-screen;
+}
+.home__content {
+  @apply mx-auto max-w-4xl;
+}
+/* END: Home styles */
+
+/* START: Hero styles */
+.hero__content {
+  @apply flex flex-col items-center justify-center text-center gap-5 m-12;
+}
+
+.hero__title {
+  @apply text-4xl;
+}
+
+.hero__subtitle {
+  @apply text-xl;
+}
+
+.hero__buttons {
+  @apply space-x-2;
+}
+
+.hero__button {
+  @apply bg-white rounded border border-slate-300 transition duration-300 hover:bg-gray-100 hover:border-gray-400 font-semibold inline-flex items-center justify-center px-2 py-1 gap-1;
+}
+/* END: Hero styles */
+
+/* START: Main section styles*/
+.main_section__container {
+  @apply flex flex-col items-center justify-center text-center gap-3 mt-12 mb-6;
+}
+.main_section__title {
+  @apply text-2xl font-medium;
+}
+.main_section__description {
+  @apply text-xl;
+}
+/* END: Main section styles*/
+
+/* START: Main section projects*/
+.main_section__projects {
+  @apply flex flex-wrap gap-2 mt-6 mb-10 mx-2;
+}
+.main_section__project {
+  @apply bg-white p-4 rounded border border-slate-300 transition duration-300 hover:bg-gray-100 hover:border-gray-400 w-full;
+}
+/* END: Main section projects*/
+
+.chip {
+  @apply inline-flex items-center px-2 py-1 bg-gray-200 text-xs rounded-full mr-1 my-1;
+}
+
+.footer {
+  @apply m-2;
 }
