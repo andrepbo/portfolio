@@ -38,7 +38,7 @@ export async function getGithubData() {
 
   // Filtering last 5 projects
   const latestPushedProjects = userRepos
-    .filter((userRepo: any) => userRepo.name !== "andrepbo.github.io")
+    .filter((userRepo: any) => userRepo.name !== "portfolio")
     .slice(0, 5);
 
   // Including the topics
