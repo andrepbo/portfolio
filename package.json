@@ -10,8 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
-    "@octokit/core": "^5.0.0",
-    "@octokit/plugin-rest-endpoint-methods": "^9.0.0",
+    "@octokit/request": "^8.1.1",
     "@types/node": "20.5.0",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",

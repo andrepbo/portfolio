@@ -1,4 +1,4 @@
-import { Octokit } from "@octokit/core";
+import { request } from "@octokit/request";
 
 /**
  * Retrieves the latest pushed GitHub repositories of a specified user,
@@ -12,10 +12,8 @@ import { Octokit } from "@octokit/core";
 export async function getGithubData() {
   const username = "andrepbo";
 
-  const octokit = new Octokit();
-
   // List of all repositories
-  const userRepoList = await octokit.request("GET /users/{username}/repos", {
+  const userRepoList = await request("GET /users/{username}/repos", {
     username,
   });
 
@@ -45,7 +43,7 @@ export async function getGithubData() {
   const latestPushedProjectsWithTopics = await Promise.all(
     latestPushedProjects.map(async (project) => {
       try {
-        const topicsResponse = await octokit.request(
+        const topicsResponse = await request(
           `GET /repos/{owner}/{repo}/topics`,
           { owner: username, repo: project.name }
         );
