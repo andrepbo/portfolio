@@ -10,6 +10,7 @@ import {
   MainSection,
   MainSectionProject,
   MainSectionProjects,
+  HeroImage,
 } from "@/components";
 import { getGithubData, getSocialMedia } from "@/util";
 import Script from "next/script";
@@ -33,6 +34,7 @@ export default async function Home() {
       </Script>
       <HomeContent>
         <HeroContent>
+          <HeroImage filename="/image/perfil-512x512-preview1.jpg" />
           <HeroTitle text="Hello. I'm André Oliveira" />
           <HeroSubtitle text="Software developer from Brazil creating useful things for the web" />
           <HeroButtons>

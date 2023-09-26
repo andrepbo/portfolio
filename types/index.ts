@@ -3,6 +3,7 @@ import FooterProps from "./FooterProps";
 import HeroButtonProps from "./HeroButtonProps";
 import HeroButtonsProps from "./HeroButtonsProps";
 import HeroContentProps from "./HeroContentProps";
+import HeroImageProps from "./HeroImageProps";
 import HeroSubtitleProps from "./HeroSubtitleProps";
 import HeroTitleProps from "./HeroTitleProps";
 import HomeContentProps from "./HomeContentProps";
@@ -17,6 +18,7 @@ export type {
   HeroButtonProps,
   HeroButtonsProps,
   HeroContentProps,
+  HeroImageProps,
   HeroSubtitleProps,
   HeroTitleProps,
   HomeContentProps,

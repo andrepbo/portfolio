@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import HeroButton from "./HeroButton";
 import HeroButtons from "./HeroButtons";
 import HeroContent from "./HeroContent";
+import HeroImage from "./HeroImage";
 import HeroSubtitle from "./HeroSubtitle";
 import HeroTitle from "./HeroTitle";
 import HomeContent from "./HomeContent";
@@ -19,6 +20,7 @@ export {
   HeroButton,
   HeroButtons,
   HeroContent,
+  HeroImage,
   HeroSubtitle,
   HeroTitle,
   HomeContent,
