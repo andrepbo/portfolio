@@ -10,28 +10,24 @@ import { request } from "@octokit/request";
  */
 
 export async function getGithubData() {
+  // Github username
   const username = "andrepbo";
 
   // List of all repositories
   const userRepoList = await request("GET /users/{username}/repos", {
     username,
+    sort: "pushed",
+    direction: "desc",
   });
 
   // Destructuring properties of the repo object
   const userRepos = userRepoList.data.map(
-    ({ id, name, html_url, description, pushed_at }) => ({
+    ({ id, name, html_url, description }) => ({
       id,
       name,
       html_url,
       description,
-      pushed_at,
     })
-  );
-
-  // Sort repositories by last push in descending order
-  userRepos.sort(
-    (a: any, b: any) =>
-      new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime()
   );
 
   // Filtering last 5 projects
