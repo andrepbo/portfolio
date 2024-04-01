@@ -35,8 +35,8 @@ export async function getGithubData() {
     .filter((userRepo: any) => userRepo.name !== "portfolio")
     .slice(0, 5);
 
-  // Including the topics
-  const latestPushedProjectsWithTopics = await Promise.all(
+  // Including the topics and profile picture URL
+  const latestPushedProjectsWithTopicsAndProfilePicture = await Promise.all(
     latestPushedProjects.map(async (project) => {
       try {
         const topicsResponse = await request(
@@ -44,13 +44,21 @@ export async function getGithubData() {
           { owner: username, repo: project.name }
         );
         const topics: string[] = topicsResponse.data.names;
-        return { ...project, topics };
+
+        // Fetching profile picture URL
+        const profilePictureResponse = await request(
+          `GET /users/{username}`,
+          { username }
+        );
+        const profilePictureUrl = profilePictureResponse.data.avatar_url;
+
+        return { ...project, topics, profilePictureUrl };
       } catch (error) {
         console.error(`Error fetching topics for ${project.name}:`, error);
-        return { ...project, topics: [] };
+        return { ...project, topics: [], profilePictureUrl: "" };
       }
     })
   );
 
-  return latestPushedProjectsWithTopics;
+  return latestPushedProjectsWithTopicsAndProfilePicture;
 }

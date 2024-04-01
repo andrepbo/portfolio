@@ -34,7 +34,7 @@ export default async function Home() {
       </Script>
       <HomeContent>
         <HeroContent>
-          <HeroImage filename="/image/perfil-512x512-preview1.jpg" />
+          <HeroImage filename={`${gitHub[0].profilePictureUrl}`} />
           <HeroTitle text="Hello. I'm André Oliveira" />
           <HeroSubtitle text="Software developer from Brazil creating useful things for the web" />
           <HeroButtons>
