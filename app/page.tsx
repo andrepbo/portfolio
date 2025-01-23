@@ -47,8 +47,7 @@ export default async function Home() {
         </HeroContent>
         <MainSection
           title="Latest Work"
-          description=" I have experience in a number of different areas. Have a look at what
-          I'm working on right now"
+          description="Have a look at what I'm working on right now"
         />
         <MainSectionProjects>
           {gitHub.map(({ id, name, description, html_url, topics }) => (
