@@ -35,8 +35,8 @@ export default async function Home() {
       <HomeContent>
         <HeroContent>
           <HeroImage filename={`${gitHub[0].profilePictureUrl}`} />
-          <HeroTitle text="Hello. I'm André Oliveira" />
-          <HeroSubtitle text="Software developer from Brazil creating useful things for the web" />
+          <HeroTitle text="Software Engineer and Tech Lead" />
+          <HeroSubtitle text="Discover my work and projects on GitHub" />
           <HeroButtons>
             {getSocialMedia.map(({ name, link, icon: Icon }) => (
               <HeroButton key={name} href={link} icon={<Icon />}>
